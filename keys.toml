@@ -1,0 +1,20 @@
+# Only keys that need something special. Everything else needs no entry.
+
+["self.shop.data-encryption-key"]
+locked = "Encrypts customer data: changing it makes existing data unreadable. Add key versioning first."
+
+["supabase.shop"]
+note = "Moved from the legacy service_role JWT. Check that no code sends it as a Bearer JWT."
+tags = ["check"]
+
+["stripe.shop"]
+page = "https://dashboard.stripe.com/apikeys"
+note = "Use a restricted key with only the permissions the API needs."
+
+["railway.shop-production"]
+note = "Railway → project → Settings → Tokens, environment production."
+tags = ["ci"]
+
+["openai.old-blog"]
+note = "The old blog is gone. Delete this key in OpenAI instead of rotating it."
+tags = ["retire"]
