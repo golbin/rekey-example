@@ -2,7 +2,7 @@
 
 # rekey 示例
 
-[rekey](https://github.com/golbin/rekey) 使用的团队数据示例：记录了一家虚构公司 Acme 的每个 API 密钥用在哪里。所有值都是虚构的，而且完全没有密钥值——密钥值保存在 1Password 中。
+[rekey](https://github.com/golbin/rekey) 使用的团队数据示例：记录了一家虚构公司 Acme 的每个 API 密钥用在哪里。密钥放在 `Acme - Prod`、`Acme - Dev`、`Acme - Local` 三个保险库中，命名为 `<项目>.<服务>`。所有值都是虚构的，而且完全没有密钥值——密钥值保存在 1Password 中。
 
 ## 用作你自己的起点
 
@@ -17,6 +17,7 @@
    ```bash
    rm -r targets keys.toml
    rekey init --vault "<你的 vault>" --source vercel --source supabase --source railway
+   rekey arrange "<你的 vault 前缀> - {env}"   # 每个环境一个保险库
    rekey import all
    git add . && git commit -m "Our keys"
    ```
@@ -28,8 +29,8 @@
 不需要 1Password：
 
 ```bash
-rekey ls                                    # 10 个密钥、签发方式、使用处
-rekey where openai.shop                     # 一个密钥用在 5 个地方
+rekey ls                                    # 14 个密钥、3 个保险库、签发方式、使用处
+rekey where shop.openai                     # 同一名称在 Prod、Dev、Local：每个环境一个密钥
 REKEY_STORE=file:/tmp/rekey.json rekey rotate all --dry-run   # 轮换时会发生什么
 ```
 

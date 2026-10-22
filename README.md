@@ -2,7 +2,7 @@
 
 # rekey example
 
-Example team data for [rekey](https://github.com/golbin/rekey): where each API key of a made-up company, Acme, is used. Every value is fake, and there are no key values at all: those live in 1Password.
+Example team data for [rekey](https://github.com/golbin/rekey): where each API key of a made-up company, Acme, is used. Keys live in three vaults, `Acme - Prod`, `Acme - Dev` and `Acme - Local`, and are named `<project>.<service>`. Every value is fake, and there are no key values at all: those live in 1Password.
 
 ## Start your own
 
@@ -17,6 +17,7 @@ Example team data for [rekey](https://github.com/golbin/rekey): where each API k
    ```bash
    rm -r targets keys.toml
    rekey init --vault "<your vault>" --source vercel --source supabase --source railway
+   rekey arrange "<your vault prefix> - {env}"   # one vault per environment
    rekey import all
    git add . && git commit -m "Our keys"
    ```
@@ -28,8 +29,8 @@ Then follow the [setup guide](https://github.com/golbin/rekey/blob/main/docs/en/
 No 1Password needed for this:
 
 ```bash
-rekey ls                                    # 10 keys, how each is issued, where it is used
-rekey where openai.shop                     # one key used in 5 places
+rekey ls                                    # 14 keys in 3 vaults, how each is issued, where it is used
+rekey where shop.openai                     # the same name in Prod, Dev and Local: one key per environment
 REKEY_STORE=file:/tmp/rekey.json rekey rotate all --dry-run   # what a rotation would do
 ```
 

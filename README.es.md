@@ -2,7 +2,7 @@
 
 # Ejemplo de rekey
 
-Datos de equipo de ejemplo para [rekey](https://github.com/golbin/rekey): dónde se usa cada clave de API de una empresa inventada, Acme. Todos los valores son falsos y no hay ningún valor de clave: esos viven en 1Password.
+Datos de equipo de ejemplo para [rekey](https://github.com/golbin/rekey): dónde se usa cada clave de API de una empresa inventada, Acme. Las claves están en tres bóvedas, `Acme - Prod`, `Acme - Dev` y `Acme - Local`, y se llaman `<proyecto>.<servicio>`. Todos los valores son falsos y no hay ningún valor de clave: esos viven en 1Password.
 
 ## Empieza el tuyo
 
@@ -17,6 +17,7 @@ Datos de equipo de ejemplo para [rekey](https://github.com/golbin/rekey): dónde
    ```bash
    rm -r targets keys.toml
    rekey init --vault "<tu bóveda>" --source vercel --source supabase --source railway
+   rekey arrange "<prefijo de tu bóveda> - {env}"   # una bóveda por entorno
    rekey import all
    git add . && git commit -m "Our keys"
    ```
@@ -28,8 +29,8 @@ Después sigue la [guía de preparación](https://github.com/golbin/rekey/blob/m
 No hace falta 1Password:
 
 ```bash
-rekey ls                                    # 10 claves, cómo se emite cada una y dónde se usa
-rekey where openai.shop                     # una clave usada en 5 lugares
+rekey ls                                    # 14 claves en 3 bóvedas, cómo se emite cada una y dónde se usa
+rekey where shop.openai                     # el mismo nombre en Prod, Dev y Local: una clave por entorno
 REKEY_STORE=file:/tmp/rekey.json rekey rotate all --dry-run   # qué haría una rotación
 ```
 

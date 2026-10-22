@@ -2,7 +2,7 @@
 
 # rekey のサンプル
 
-[rekey](https://github.com/golbin/rekey) が使うチームデータの例です。架空の会社 Acme の API キーがどこで使われているかを書いています。値はすべて架空で、キーの値はまったく入っていません。キーの値は 1Password に置きます。
+[rekey](https://github.com/golbin/rekey) が使うチームデータの例です。架空の会社 Acme の API キーがどこで使われているかを書いています。キーは `Acme - Prod`、`Acme - Dev`、`Acme - Local` の 3 つの保管庫にあり、名前は `<プロジェクト>.<サービス>` です。値はすべて架空で、キーの値はまったく入っていません。キーの値は 1Password に置きます。
 
 ## 自分のチーム用に始める
 
@@ -17,6 +17,7 @@
    ```bash
    rm -r targets keys.toml
    rekey init --vault "<自分の vault>" --source vercel --source supabase --source railway
+   rekey arrange "<自分の vault の接頭辞> - {env}"   # 環境ごとに保管庫ひとつ
    rekey import all
    git add . && git commit -m "Our keys"
    ```
@@ -28,8 +29,8 @@
 1Password は不要です。
 
 ```bash
-rekey ls                                    # キー 10 個、発行方法、使用先
-rekey where openai.shop                     # ひとつのキーが 5 か所で使われている
+rekey ls                                    # キー 14 個、保管庫 3 つ、発行方法、使用先
+rekey where shop.openai                     # 同じ名前が Prod・Dev・Local に：環境ごとにキーひとつ
 REKEY_STORE=file:/tmp/rekey.json rekey rotate all --dry-run   # ローテーションすると何が起きるか
 ```
 

@@ -2,7 +2,7 @@
 
 # rekey 예시
 
-[rekey](https://github.com/golbin/rekey)가 쓰는 팀 데이터의 예시입니다. 가상의 회사 Acme의 API 키가 어디에 쓰이는지 적혀 있습니다. 모든 값은 가짜이고, 키 값은 아예 없습니다. 키 값은 1Password에 둡니다.
+[rekey](https://github.com/golbin/rekey)가 쓰는 팀 데이터의 예시입니다. 가상의 회사 Acme의 API 키가 어디에 쓰이는지 적혀 있습니다. 키는 `Acme - Prod`, `Acme - Dev`, `Acme - Local` 세 볼트에 있고, 이름은 `<프로젝트>.<서비스>`입니다. 모든 값은 가짜이고, 키 값은 아예 없습니다. 키 값은 1Password에 둡니다.
 
 ## 우리 팀 것으로 시작하기
 
@@ -17,6 +17,7 @@
    ```bash
    rm -r targets keys.toml
    rekey init --vault "<우리 vault>" --source vercel --source supabase --source railway
+   rekey arrange "<우리 vault 접두어> - {env}"   # 환경마다 볼트 하나
    rekey import all
    git add . && git commit -m "Our keys"
    ```
@@ -28,8 +29,8 @@
 1Password 없이도 됩니다.
 
 ```bash
-rekey ls                                    # 키 10개, 발급 방식, 사용처
-rekey where openai.shop                     # 키 하나가 5곳에서 쓰임
+rekey ls                                    # 키 14개, 볼트 3개, 발급 방식, 사용처
+rekey where shop.openai                     # 같은 이름이 Prod·Dev·Local에: 환경마다 키 하나
 REKEY_STORE=file:/tmp/rekey.json rekey rotate all --dry-run   # 교체하면 무슨 일이 일어나는지
 ```
 

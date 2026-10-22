@@ -1,1 +1,1 @@
-OPENAI_API_KEY={{ op://Acme - Prod/openai.old-blog/credential }}
+OPENAI_API_KEY={{ op://Acme - Local/old-blog.openai/credential }}
