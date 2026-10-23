@@ -36,12 +36,12 @@ REKEY_STORE=file:/tmp/rekey.json rekey rotate all --dry-run   # ローテーシ�
 
 | ファイル | 示していること |
 |---|---|
-| `targets/file/shop/web/.env.local.tpl` | ローカルの .env：キーだけ、URL の中のパスワード |
-| `targets/file/shop/api/.env.tpl` | R2 のキーペア（ひとつのキーの 2 つのフィールド） |
-| `targets/vercel/shop/production.tpl` | キーと並ぶ通常の設定、rekey が読めない変数 |
-| `targets/vercel/shop/preview.tpl` | 同じキーを別の環境で |
-| `targets/railway/shop/production/api.tpl` | Railway のサービス |
-| `targets/supabase/<ref>.tpl` | Supabase Edge Function secrets |
-| `targets/github/acme/shop/production.tpl` | GitHub Actions の環境 secret |
-| `targets/file/old-blog/.env.tpl` | 使われなくなったプロジェクトにだけ残るキー |
+| `targets/shop/file/shop/web/.env.local.tpl` | ローカルの .env：キーだけ、URL の中のパスワード |
+| `targets/shop/file/shop/api/.env.tpl` | R2 のキーペア（ひとつのキーの 2 つのフィールド） |
+| `targets/shop/vercel/shop/production.tpl` | キーと並ぶ通常の設定、rekey が読めない変数 |
+| `targets/shop/vercel/shop/preview.tpl` | 同じキーを別の環境で |
+| `targets/api/railway/shop/production/api.tpl` | Railway のサービス |
+| `targets/shop/supabase/<ref>.tpl` | Supabase Edge Function secrets |
+| `targets/shop/github/acme/shop/production.tpl` | GitHub Actions の環境 secret |
+| `targets/old-blog/file/old-blog/.env.tpl` | 使われなくなったプロジェクトにだけ残るキー |
 | `keys.toml` | `locked`、`check`、`retire`、`note`、`page` |

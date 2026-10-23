@@ -36,12 +36,12 @@ REKEY_STORE=file:/tmp/rekey.json rekey rotate all --dry-run   # what a rotation 
 
 | File | Shows |
 |---|---|
-| `targets/file/shop/web/.env.local.tpl` | a local .env: keys only, a password inside a URL |
-| `targets/file/shop/api/.env.tpl` | an R2 key pair (two fields of one key) |
-| `targets/vercel/shop/production.tpl` | plain settings next to keys, and a variable rekey can't read |
-| `targets/vercel/shop/preview.tpl` | the same key in another environment |
-| `targets/railway/shop/production/api.tpl` | a Railway service |
-| `targets/supabase/<ref>.tpl` | Supabase Edge Function secrets |
-| `targets/github/acme/shop/production.tpl` | a GitHub Actions secret in an environment |
-| `targets/file/old-blog/.env.tpl` | a key only a retired project still has |
+| `targets/shop/file/shop/web/.env.local.tpl` | a local .env: keys only, a password inside a URL |
+| `targets/shop/file/shop/api/.env.tpl` | an R2 key pair (two fields of one key) |
+| `targets/shop/vercel/shop/production.tpl` | plain settings next to keys, and a variable rekey can't read |
+| `targets/shop/vercel/shop/preview.tpl` | the same key in another environment |
+| `targets/api/railway/shop/production/api.tpl` | a Railway service |
+| `targets/shop/supabase/<ref>.tpl` | Supabase Edge Function secrets |
+| `targets/shop/github/acme/shop/production.tpl` | a GitHub Actions secret in an environment |
+| `targets/old-blog/file/old-blog/.env.tpl` | a key only a retired project still has |
 | `keys.toml` | `locked`, `check`, `retire`, `note`, `page` |

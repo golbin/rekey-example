@@ -36,12 +36,12 @@ REKEY_STORE=file:/tmp/rekey.json rekey rotate all --dry-run   # 교체하면 무
 
 | 파일 | 보여 주는 것 |
 |---|---|
-| `targets/file/shop/web/.env.local.tpl` | 로컬 .env: 키만 있음, URL 안의 비밀번호 |
-| `targets/file/shop/api/.env.tpl` | R2 키 쌍 (키 하나의 두 필드) |
-| `targets/vercel/shop/production.tpl` | 키와 함께 있는 일반 설정, rekey가 읽을 수 없는 변수 |
-| `targets/vercel/shop/preview.tpl` | 같은 키를 다른 환경에서 |
-| `targets/railway/shop/production/api.tpl` | Railway 서비스 |
-| `targets/supabase/<ref>.tpl` | Supabase Edge Function secrets |
-| `targets/github/acme/shop/production.tpl` | GitHub Actions 환경 secret |
-| `targets/file/old-blog/.env.tpl` | 안 쓰는 프로젝트에만 남은 키 |
+| `targets/shop/file/shop/web/.env.local.tpl` | 로컬 .env: 키만 있음, URL 안의 비밀번호 |
+| `targets/shop/file/shop/api/.env.tpl` | R2 키 쌍 (키 하나의 두 필드) |
+| `targets/shop/vercel/shop/production.tpl` | 키와 함께 있는 일반 설정, rekey가 읽을 수 없는 변수 |
+| `targets/shop/vercel/shop/preview.tpl` | 같은 키를 다른 환경에서 |
+| `targets/api/railway/shop/production/api.tpl` | Railway 서비스 |
+| `targets/shop/supabase/<ref>.tpl` | Supabase Edge Function secrets |
+| `targets/shop/github/acme/shop/production.tpl` | GitHub Actions 환경 secret |
+| `targets/old-blog/file/old-blog/.env.tpl` | 안 쓰는 프로젝트에만 남은 키 |
 | `keys.toml` | `locked`, `check`, `retire`, `note`, `page` |

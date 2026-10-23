@@ -36,12 +36,12 @@ REKEY_STORE=file:/tmp/rekey.json rekey rotate all --dry-run   # 轮换时会发�
 
 | 文件 | 展示内容 |
 |---|---|
-| `targets/file/shop/web/.env.local.tpl` | 本地 .env：只有密钥，URL 中的密码 |
-| `targets/file/shop/api/.env.tpl` | R2 密钥对（一个密钥的两个字段） |
-| `targets/vercel/shop/production.tpl` | 与密钥并列的普通配置，以及 rekey 无法读取的变量 |
-| `targets/vercel/shop/preview.tpl` | 同一个密钥用在另一个环境 |
-| `targets/railway/shop/production/api.tpl` | Railway 服务 |
-| `targets/supabase/<ref>.tpl` | Supabase Edge Function secrets |
-| `targets/github/acme/shop/production.tpl` | GitHub Actions 环境 secret |
-| `targets/file/old-blog/.env.tpl` | 只剩在已停用项目中的密钥 |
+| `targets/shop/file/shop/web/.env.local.tpl` | 本地 .env：只有密钥，URL 中的密码 |
+| `targets/shop/file/shop/api/.env.tpl` | R2 密钥对（一个密钥的两个字段） |
+| `targets/shop/vercel/shop/production.tpl` | 与密钥并列的普通配置，以及 rekey 无法读取的变量 |
+| `targets/shop/vercel/shop/preview.tpl` | 同一个密钥用在另一个环境 |
+| `targets/api/railway/shop/production/api.tpl` | Railway 服务 |
+| `targets/shop/supabase/<ref>.tpl` | Supabase Edge Function secrets |
+| `targets/shop/github/acme/shop/production.tpl` | GitHub Actions 环境 secret |
+| `targets/old-blog/file/old-blog/.env.tpl` | 只剩在已停用项目中的密钥 |
 | `keys.toml` | `locked`、`check`、`retire`、`note`、`page` |
